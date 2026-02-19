@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: test-os
+name: FumOS
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: FumOS-bootc.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/bazzite-gnome
 image-version: latest #42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -64,7 +64,6 @@ modules:
         - firewall-config
         - kf6-kirigami
         - qt6ct
-        - polkit-kde
         - plasma-breeze
         - kf6-qqc2-desktop-style
         - xdg-desktop-portal-gtk
@@ -85,26 +84,17 @@ modules:
         - JetBrainsMono
         - NerdFontsSymbolsOnly
     
-  - type: dnf # packages for virtualization
-    install:
-      packages:
-        - libvirt-daemon-kvm
-        - libvirt-client
-        - virt-manager
-        - virt-viewer
-        - virt-install
-        - qemu-kvm
-        - edk2-ovmf
-        - swtpm
-        - swtpm-tools
-        - libvirt-daemon-config-network
-
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+
+  - type: containerfile
+    snippets:
+      - RUN flatpak config --set languages "en;ja"
 
   - type: default-flatpaks
     configurations:
@@ -116,43 +106,26 @@ modules:
           - com.brave.Browser
           - io.mpv.Mpv
           - org.onlyoffice.desktopeditors
-          - org.kde.elisa
-          - org.kde.gwenview
           - com.ranfdev.DistroShelf
           - com.obsproject.Studio
           - com.github.tchx84.Flatseal
-          - io.github.kolunmi.Bazaar
 
 
-
-
-  - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
-          
-
-  # swap kernel to cachyos-lto
-  - type: script
-    scripts:
-      - swap-kernel.sh
-      - initramfs.sh
-
-
-  - type: containerfile
-    snippets:
-      - RUN systemctl enable virtqemud.socket virtnetworkd.socket virtstoraged.socket virtproxyd.socket virtnodedevd.socket virtsecretd.socket
 
   
+  
+
+
           
   - type: os-release
     properties:
       ID: fumos
       ID_LIKE: fedora
       NAME: FumOS
-      VERSION: Reimu
+      VERSION: Cirno
       PRETTY_NAME: FumOS
       DEFAULT_HOSTNAME: FumOS
-      VERSION_CODENAME: Reimu
+      VERSION_CODENAME: Cirno
 
   
 
