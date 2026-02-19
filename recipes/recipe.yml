@@ -117,7 +117,7 @@ modules:
           - com.obsproject.Studio.Plugin.Gstreamer
           - com.obsproject.Studio.Plugin.OBSVkCapture
           - org.freedesktop.Platform.VulkanLayer.OBSVkCapture
-	  - org.freedesktop.Platform.VulkanLayer.vkBasalt
+          - org.freedesktop.Platform.VulkanLayer.vkBasalt
           - com.github.tchx84.Flatseal
           - com.discordapp.Discord
           - com.github.Matoking.protontricks
