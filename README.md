@@ -10,6 +10,9 @@ Podman
 Distrobox
 
 ## Installation
+### ISO
+WIP
+### Rebasing
 Install bazzite with the gnome desktop environment amd or(nvidia is not supported yet)
 once you log in clone this repo and move everything inside ```files/system/usr/etc/skel``` to your home directory
 then rebase to FumOS
