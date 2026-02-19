@@ -115,7 +115,7 @@
       "width": 50
     }
   ],
-  "showWorkspaceIndex": false,
+  "showWorkspaceIndex": true,
   "showWorkspaceName": false,
   "showWorkspacePadding": false,
   "workspaceScrolling": false,
@@ -127,7 +127,7 @@
   "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": false,
   "reverseScrolling": false,
-  "dwlShowAllTags": false,
+  "dwlShowAllTags": true,
   "workspaceColorMode": "default",
   "workspaceOccupiedColorMode": "none",
   "workspaceUnfocusedColorMode": "default",
@@ -387,7 +387,7 @@
   "customPowerActionPowerOff": "",
   "updaterHideWidget": false,
   "updaterUseCustomCommand": true,
-  "updaterCustomCommand": "bootc update",
+  "updaterCustomCommand": "ujust update",
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
   "screenPreferences": {},
@@ -430,7 +430,7 @@
         "controlCenterButton"
       ],
       "spacing": 4,
-      "innerPadding": 4,
+      "innerPadding": 0,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,

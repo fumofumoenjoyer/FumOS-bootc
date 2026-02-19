@@ -73,6 +73,12 @@ modules:
         - ptyxis
         - libappindicator-gtk3
         - libindicator
+        - pipewire
+        - pipewire-pulseaudio
+        - pipewire-jack-audio-connection-kit
+        - pipewire-alsa
+        - wireplumber
+        - pipewire-utils
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
