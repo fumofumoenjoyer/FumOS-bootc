@@ -314,4 +314,4 @@ bind=NONE,XF86MonBrightnessDown,spawn,dms ipc call brightness decrement 5
 # Add to the end of ~/.config/mango/config.conf
 source=~/.config/mango/dms/colors.conf
 source=~/.config/mango/dms/layout.conf
-source=~/.config/mango/dms/outputs.confsource = ./dms/binds.conf
+source=~/.config/mango/dms/outputs.conf
