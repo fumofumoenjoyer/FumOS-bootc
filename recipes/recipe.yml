@@ -129,7 +129,6 @@ modules:
 
   - type: containerfile
     snippets:
-      - RUN systemctl enable --global dms
       - RUN systemctl enable virtqemud.socket virtnetworkd.socket virtstoraged.socket virtproxyd.socket virtnodedevd.socket virtsecretd.socket
 
   
