@@ -11,6 +11,8 @@ Podman
 
 Distrobox
 
+CachyOS LTO kernel
+
 ## Installation
 ### ISO
 WIP
