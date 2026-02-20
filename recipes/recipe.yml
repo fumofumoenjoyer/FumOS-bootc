@@ -44,10 +44,17 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  # swap kernel
+  - type: script
+    scripts:
+      - swap-kernel.sh
+      - initramfs.sh
+
   - type: dnf
     repos:
       copr:
         - atim/starship
+        - bieszczaders/kernel-cachyos-addons
     install:
       packages:
         - micro
@@ -62,6 +69,14 @@ modules:
         - p7zip-plugins
         - unar
         - distrobox
+        - steam-devices
+        - cachyos-settings
+        - scx-scheds
+        - scx-tools
+        - topgrade
+        - podman-compose
+        
+
         
 
   - type: dnf
@@ -107,11 +122,7 @@ modules:
 
 
       
-  # swap kernel
-  - type: script
-    scripts:
-      - swap-kernel.sh
-      - initramfs.sh
+
 
   - type: os-release
     properties:
