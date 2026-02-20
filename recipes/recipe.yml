@@ -116,7 +116,11 @@ modules:
           - io.github.flattool.Warehouse
           - org.qbittorrent.qBittorrent
           
-         
+  
+  - type: brew
+    nofile-limits: true # increase nofile limits
+    brew-analytics: false # disable telemetry
+
   - type: os-release
     properties:
       ID: fumos
