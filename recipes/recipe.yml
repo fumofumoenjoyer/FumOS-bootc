@@ -6,7 +6,7 @@ name: fumos
 description: FumOS-bootc.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-gnome
+base-image: ghcr.io/ublue-os/cosmic-atomic-main
 image-version: latest #42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -40,13 +40,9 @@ modules:
     repos:
       copr:
         - atim/starship
-        - dennemann/MangoWC
-        - avengemedia/dms
     install:
       packages:
         - micro
-        - mangowc
-        - dms
         - fastfetch
         - vim
         - neovim
@@ -66,19 +62,12 @@ modules:
         - qt6ct
         - plasma-breeze
         - kf6-qqc2-desktop-style
-        - xdg-desktop-portal-gtk
-        - xdg-desktop-portal-wlr
-        - xdg-desktop-portal-gnome
-        - kitty
         - ptyxis
         - libappindicator-gtk3
         - libindicator
-        - pipewire
-        - pipewire-pulseaudio
-        - pipewire-jack-audio-connection-kit
-        - pipewire-alsa
-        - wireplumber
-        - pipewire-utils
+        - 7zip
+        - distrobox
+        
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -121,26 +110,11 @@ modules:
           - com.github.tchx84.Flatseal
           - com.discordapp.Discord
           - com.github.Matoking.protontricks
-          - com.heroicgameslauncher.hgl
-          - com.usebottles.bottles
           - com.vysp3r.ProtonPlus
-          - io.github.benjamimgois.goverlay
           - io.github.flattool.Warehouse
-          - net.nokyan.Resources
-          - org.freedesktop.Platform.codecs-extra
-          - org.freedesktop.Platform.codecs_extra.i386
-          - org.freedesktop.Platform.openh264
-          - org.gnome.Calculator
-          - org.gnome.font-viewer
-          - org.gnome.Logs
-          - org.gnome.NautilusPreviewer
-          - org.gnome.Characters
-          - org.gnome.Loupe
-          - org.gnome.TextEditor
           - org.qbittorrent.qBittorrent
-          - org.vinegarhq.Sober
-          - org.gnome.baobab
           
+         
   - type: os-release
     properties:
       ID: fumos
@@ -150,6 +124,12 @@ modules:
       PRETTY_NAME: FumOS
       DEFAULT_HOSTNAME: FumOS
       VERSION_CODENAME: Cirno
+      
+  # swap kernel
+  - type: script
+    scripts:
+      - swap-kernel.sh
+      - initramfs.sh
 
   
 
