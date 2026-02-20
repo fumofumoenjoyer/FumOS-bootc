@@ -105,9 +105,9 @@ modules:
     snippets:
       - RUN flatpak config --set languages "en;ja"
       - RUN systemctl enable virtqemud \
-                   virtnetworkd \
-                   virtstoraged \
-                   virtproxyd
+                  virtnetworkd \
+                  virtstoraged \
+                  virtproxyd
 
   - type: default-flatpaks
     configurations:
