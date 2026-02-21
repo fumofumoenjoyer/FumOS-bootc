@@ -55,6 +55,7 @@ modules:
       copr:
         - atim/starship
         - bieszczaders/kernel-cachyos-addons
+        - ublue-os/staging
     install:
       packages:
         - micro
