@@ -65,7 +65,6 @@ modules:
         - htop
         - firewall-config
         - ptyxis
-        - kitty
         - p7zip
         - p7zip-plugins
         - unar
@@ -115,6 +114,9 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - com.brave.Browser
+          - org.kde.gwenview
+          - org.kde.elisa
+          - org.mozilla.Thunderbird
           
   
   - type: brew
@@ -128,6 +130,7 @@ modules:
   - type: os-release
     properties:
       ID: fumos
+      ID_LIKE: fedora
       NAME: FumOS
       VERSION: Cirno
       PRETTY_NAME: FumOS
