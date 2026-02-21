@@ -114,9 +114,11 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - com.brave.Browser
-          - org.kde.gwenview
-          - org.kde.elisa
           - org.mozilla.Thunderbird
+          - org.kde.ark
+          - org.gnome.gThumb
+          - org.atheme.audacious
+        
           
   
   - type: brew
